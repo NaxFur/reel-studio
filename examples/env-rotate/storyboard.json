@@ -1,0 +1,922 @@
+{
+ "meta": {
+  "series": "duo",
+  "format": "duo-sketch-reel",
+  "title": "Leaked your .env? Rotate the key first",
+  "language": "en",
+  "cta_keyword": "LEAK",
+  "caption": "force-pushed to delete my .env. it was already forked 🫠\n\nold key, dead key: rotate first, clean up after.",
+  "hashtags": [
+   "#github",
+   "#git",
+   "#cybersecurity",
+   "#coding",
+   "#claudecode"
+  ],
+  "hook": {
+   "text": "I PUSHED MY .ENV\nTO GITHUB.",
+   "badge": "DELETED IT. SAFE?",
+   "until": "L01.end",
+   "variant_b": {
+    "text": "OLD KEY,\nDEAD KEY.",
+    "badge": "LEAKED YOUR .ENV?"
+   }
+  },
+  "title_card": {
+   "line1": "ROTATE FIRST",
+   "line2": "CLEAN UP AFTER",
+   "cta_tail": " for the leak checklist"
+  },
+  "cover": {
+   "beat": "L06",
+   "at": "w:key",
+   "line1": "LEAKED",
+   "line2": "YOUR .ENV?",
+   "badge": "ROTATE FIRST"
+  },
+  "sticky": [
+   "NEVER",
+   "PUSH .ENV",
+   "(again)"
+  ],
+  "light": "alarm",
+  "claude_spot": "desk",
+  "claude_eyes": "flat",
+  "nerd_start": {
+   "face": "panic",
+   "pose": "recoil",
+   "hands": [
+    "cheek",
+    "cheek"
+   ],
+   "look": "screen"
+  },
+  "screen_default": {
+   "left": {
+    "type": "code",
+    "file": ".env",
+    "lines": [
+     "API_KEY=a91f3c7e...",
+     "DB_PASSWORD=hunter2",
+     "# do not commit"
+    ]
+   },
+   "right": {
+    "type": "code",
+    "file": ".gitignore",
+    "lines": [
+     "# TODO"
+    ]
+   }
+  },
+  "music": [
+   {
+    "at": 0,
+    "style": "tense"
+   },
+   {
+    "at": "L06.start",
+    "style": "none",
+    "stop": "tape"
+   },
+   {
+    "at": "B07.start",
+    "style": "groove"
+   },
+   {
+    "at": "L10.start",
+    "style": "drone",
+    "stop": "tape"
+   },
+   {
+    "at": "TITLE.start",
+    "style": "resolve"
+   },
+   {
+    "at": "L12.start",
+    "style": "lofi"
+   },
+   {
+    "at": "END.start",
+    "style": "tense"
+   }
+  ],
+  "resources": {
+   "title": "Leaked a .env on GitHub? Rotate first, clean up after",
+   "summary": "Once a secret is pushed, deleting the commit doesn't take it back: forks and clones keep it. Revoke and rotate the secret first, then clean the history, then stop it happening again.",
+   "main_link": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
+   "links": [
+    {
+     "label": "GitHub Docs: Removing sensitive data from a repository",
+     "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+    },
+    {
+     "label": "GitHub Docs: About push protection",
+     "url": "https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection"
+    },
+    {
+     "label": "git rm --cached",
+     "url": "https://git-scm.com/docs/git-rm"
+    }
+   ],
+   "steps": [
+    {
+     "title": "Revoke and rotate the secret first",
+     "text": "Go to the service that issued the key and revoke it, then create a new one and keep it only in your local .env. GitHub's docs call this the first step: a revoked secret can no longer be used for access."
+    },
+    {
+     "title": "Assume copies exist",
+     "text": "Deleting or force-pushing the commit doesn't reach copies: if the commit exists in a fork, it stays accessible there, and you can't remove it from other people's clones. That's why rotating comes first."
+    },
+    {
+     "title": "Then clean the history",
+     "text": "GitHub's docs use git-filter-repo (a version with the --sensitive-data-removal flag, 2.47 or later). Rewriting history has side effects for everyone who works on the repo, so read the docs page before running it.",
+     "code": "git-filter-repo --sensitive-data-removal --invert-paths --path .env"
+    },
+    {
+     "title": "Stop it happening again",
+     "text": "Add .env to .gitignore. If git already tracks the file, untrack it with git rm --cached: it removes the path from the index and leaves your local file alone.",
+     "code": "echo \".env\" >> .gitignore\ngit rm --cached .env"
+    }
+   ],
+   "notes": [
+    "GitHub push protection for users is enabled by default and stops you pushing secrets to public repositories on GitHub (GitHub Docs, About push protection).",
+    "GitHub Support only helps remove sensitive data when the risk can't be mitigated by rotating the credentials."
+   ]
+  }
+ },
+ "beats": [
+  {
+   "id": "B00",
+   "hold": 0.3,
+   "shot": "ecu_center",
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "zsh — ~/my-app",
+      "lines": [
+       "$ git commit -m \"ship it\"",
+       "+ .env",
+       "$ git push",
+       "✓ main -> origin (public)"
+      ],
+      "scale": 1.45,
+      "y0": 30,
+      "big": {
+       "text": ".ENV IS PUBLIC",
+       "color": "red",
+       "at": "start-1.0"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+   ]
+  },
+  {
+   "id": "L01",
+   "speaker": "nerd",
+   "gap": 0.0,
+   "text": "Okay. Deleted the commit. We're safe.",
+   "tts": "[out of breath, forcing himself to sound calm] Okay. Deleted the commit. [short pause] We're safe.",
+   "shot": {
+    "name": "nerd_mcu",
+    "punch": [
+     {
+      "at": "w:safe",
+      "amt": 1.14
+     }
+    ],
+    "tgt_off": [
+     0,
+     0,
+     0.24
+    ]
+   },
+   "emph": [
+    "deleted",
+    "safe"
+   ],
+   "nerd": [
+    {
+     "at": "start",
+     "face": "exhausted",
+     "pose": "lean_back",
+     "look": "screen",
+     "hands": [
+      "head",
+      "head"
+     ]
+    },
+    {
+     "at": "w:safe",
+     "face": "relief",
+     "look": "mascot"
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "speaker": "claude",
+   "gap": 0.16,
+   "text": "It got forked. Thirty seconds ago.",
+   "tts": "[dry, unbothered] It got forked. [short pause] Thirty seconds ago.",
+   "shot": "claude_cu",
+   "emph": [
+    "forked",
+    "thirty"
+   ],
+   "claude": [
+    {
+     "at": "start-0.2",
+     "do": "turn",
+     "to": "cheat",
+     "dur": 0.35
+    },
+    {
+     "at": "w:forked",
+     "do": "bounce",
+     "amt": 0.8
+    }
+   ],
+   "nerd": [
+    {
+     "at": "start",
+     "face": "surprised",
+     "look": "mascot",
+     "pose": "upright",
+     "hands": [
+      "lap",
+      "lap"
+     ]
+    }
+   ],
+   "overlay": [
+    {
+     "type": "chip",
+     "text": "1 NEW FORK",
+     "color": "red",
+     "at": "w:forked-0.25",
+     "until": "end+0.1",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w:forked-0.25",
+     "type": "buzz"
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "speaker": "nerd",
+   "gap": 0.14,
+   "text": "Then I'll delete the fork!",
+   "tts": "[panicking, high-pitched, fast] Then I'll delete the fork!",
+   "shot": {
+    "name": "nerd_cu",
+    "punch": [
+     {
+      "at": "w:fork",
+      "amt": 1.15
+     }
+    ]
+   },
+   "emph": [
+    "delete",
+    "fork"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.1",
+     "face": "panic",
+     "pose": "recoil",
+     "hands": [
+      "cheek",
+      "cheek"
+     ],
+     "look": "mascot"
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "speaker": "claude",
+   "gap": 0.3,
+   "text": "It's not your fork.",
+   "tts": "[flat, slow, patient] It's not your fork.",
+   "shot": "claude_cu",
+   "emph": [
+    "not",
+    "your"
+   ],
+   "claude": [
+    {
+     "at": "start",
+     "do": "eyes",
+     "to": "flat"
+    },
+    {
+     "at": "w:not",
+     "do": "shake",
+     "dur": 0.5
+    }
+   ],
+   "nerd": [
+    {
+     "at": "start",
+     "face": "sad",
+     "pose": "slump",
+     "hands": [
+      "face",
+      null
+     ],
+     "look": "down"
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "speaker": "nerd",
+   "gap": 0.18,
+   "text": "Fine. I'll email them. Politely.",
+   "tts": "[desperate, bargaining] Fine. I'll email them. [pause] Politely.",
+   "shot": "ots_nerd",
+   "emph": [
+    "email",
+    "politely"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.05",
+     "face": "angry",
+     "pose": "lean_in",
+     "look": "screen",
+     "hands": [
+      "type",
+      "type"
+     ]
+    },
+    {
+     "at": "start+0.1",
+     "do": "type",
+     "until": "end-0.1"
+    }
+   ],
+   "claude": [
+    {
+     "at": "end-0.55",
+     "do": "walk",
+     "to": "edge",
+     "dur": 0.6,
+     "face": "lens"
+    }
+   ],
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "mail — new draft",
+      "lines": [
+       "To: whoever-forked-my-repo",
+       "Subject: pls delete my .env",
+       "",
+       "Dear stranger,",
+       "I beg you."
+      ],
+      "typed": true,
+      "cps": 22,
+      "type_delay": 0.05,
+      "scale": 1.35
+     }
+    ]
+   },
+   "cuts": [
+    {
+     "at": "w:email-0.1",
+     "shot": {
+      "name": "monitor_ecu",
+      "static": false
+     }
+    }
+   ],
+   "sub_y": 1480
+  },
+  {
+   "id": "L06",
+   "speaker": "claude",
+   "gap": 0.32,
+   "text": "Or. Rotate. The key.",
+   "tts": "[calm, deliberate, a little smug] Or. [pause] Rotate. [pause] The key.",
+   "shot": {
+    "name": "claude_lens",
+    "punch": [
+     {
+      "at": "w:key",
+      "amt": 1.14
+     }
+    ]
+   },
+   "emph": [
+    "rotate",
+    "key"
+   ],
+   "light": [
+    {
+     "at": "start",
+     "preset": "spot"
+    }
+   ],
+   "claude": [
+    {
+     "at": "w:rotate",
+     "do": "bounce",
+     "amt": 1.0
+    },
+    {
+     "at": "w:key",
+     "do": "bounce",
+     "amt": 1.2
+    }
+   ],
+   "overlay": [
+    {
+     "type": "stamp",
+     "text": "ROTATE THE KEY",
+     "color": "yellow",
+     "at": "w:key-0.25",
+     "until": "end+0.15",
+     "y": 330,
+     "rot": -4
+    }
+   ],
+   "sources": [
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+   ]
+  },
+  {
+   "id": "B07",
+   "hold": 0.7,
+   "gap": 0.05,
+   "shot": "ots_nerd",
+   "nerd": [
+    {
+     "at": "start",
+     "face": "attentive",
+     "pose": "lean_in",
+     "look": "screen",
+     "hands": [
+      "type",
+      "mouse"
+     ],
+     "hdur": 0.05,
+     "pdur": 0.05,
+     "ldur": 0.05,
+     "fdur": 0.05
+    },
+    {
+     "at": "start+0.25",
+     "do": "click"
+    },
+    {
+     "at": "start+0.5",
+     "do": "click"
+    }
+   ],
+   "claude": [
+    {
+     "at": "start",
+     "do": "walk",
+     "to": "desk",
+     "dur": 0.05
+    }
+   ],
+   "screens": {
+    "center": [
+     {
+      "at": "start+0.25",
+      "type": "menu",
+      "title": "dashboard — API keys",
+      "header": "API keys",
+      "items": [
+       "API_KEY  a91f...  (leaked)",
+       "Revoke key",
+       "Create new key"
+      ],
+      "sel": [
+       {
+        "at": "start+0.25",
+        "i": 0
+       },
+       {
+        "at": "L07.w:old-0.2",
+        "i": 1
+       },
+       {
+        "at": "L07.w:dead-0.25",
+        "i": 2
+       }
+      ],
+      "done": {
+       "at": "L07.w:opens-0.25",
+       "text": "✓ Old key revoked",
+       "sub": "new key -> local .env only"
+      },
+      "hint": "↑↓ select · enter confirm",
+      "scale": 1.2
+     }
+    ]
+   }
+  },
+  {
+   "id": "L07",
+   "speaker": "claude",
+   "gap": 0.0,
+   "text": "Old key, dead key. It opens nothing now.",
+   "tts": "[brisk, satisfied] Old key, dead key. [short pause] It opens nothing now.",
+   "shot": {
+    "name": "monitor_ecu",
+    "static": false
+   },
+   "cut_lead": 0.0,
+   "sub_y": 1480,
+   "emph": [
+    "dead",
+    "nothing"
+   ],
+   "nerd": [
+    {
+     "at": "w:old-0.2",
+     "do": "click"
+    },
+    {
+     "at": "w:dead-0.25",
+     "do": "click"
+    },
+    {
+     "at": "w:opens-0.25",
+     "do": "tap_r"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w:opens-0.25",
+     "type": "chime"
+    }
+   ],
+   "light": [
+    {
+     "at": "w:opens-0.25",
+     "preset": "green"
+    }
+   ],
+   "sources": [
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+   ]
+  },
+  {
+   "id": "L08",
+   "speaker": "nerd",
+   "gap": 0.35,
+   "text": "…That's it?",
+   "tts": "[stunned, quiet, relieved] …That's it?",
+   "shot": "nerd_mcu",
+   "emph": [
+    "it"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.2",
+     "face": "amazed",
+     "pose": "amazed",
+     "look": "screen",
+     "hands": [
+      "lap",
+      "lap"
+     ]
+    },
+    {
+     "at": "w:it",
+     "face": "relief",
+     "look": "mascot"
+    }
+   ],
+   "claude": [
+    {
+     "at": "end-0.55",
+     "do": "walk",
+     "to": "edge",
+     "dur": 0.6,
+     "face": "lens"
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "speaker": "claude",
+   "gap": 0.2,
+   "text": "Rotate first. Clean the history after. Forks keep everything.",
+   "tts": "[upbeat, teaching] Rotate first. Clean the history after. [short pause] Forks keep everything.",
+   "shot": "claude_lens",
+   "emph": [
+    "first",
+    "after",
+    "forks"
+   ],
+   "light": [
+    {
+     "at": "start",
+     "preset": "spot"
+    }
+   ],
+   "claude": [
+    {
+     "at": "w:rotate",
+     "do": "bounce",
+     "amt": 0.8
+    },
+    {
+     "at": "w:clean",
+     "do": "bounce",
+     "amt": 0.8
+    },
+    {
+     "at": "w:forks",
+     "do": "shake",
+     "dur": 0.5
+    }
+   ],
+   "overlay": [
+    {
+     "type": "panel",
+     "title": "LEAKED A KEY?",
+     "at": "start",
+     "until": "end+0.15",
+     "y": 250,
+     "items": [
+      {
+       "text": "1. Revoke + rotate it",
+       "sub": "the leaked key stops working",
+       "at": "w:rotate-0.2"
+      },
+      {
+       "text": "2. Then clean the history",
+       "sub": "forks and clones keep a copy",
+       "at": "w:clean-0.2"
+      },
+      {
+       "text": "3. Add .env to .gitignore",
+       "sub": "so it can't happen again",
+       "at": "w:forks-0.2"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository"
+   ]
+  },
+  {
+   "id": "L10",
+   "speaker": "nerd",
+   "gap": 0.22,
+   "text": "Wait. Why didn't you say that a minute ago?",
+   "tts": "[suspicious, slow] Wait. [pause] Why didn't you say that a minute ago?",
+   "shot": "nerd_cu",
+   "emph": [
+    "why",
+    "minute"
+   ],
+   "light": [
+    {
+     "at": "start",
+     "preset": "dim"
+    }
+   ],
+   "nerd": [
+    {
+     "at": "start-0.1",
+     "face": "suspicious",
+     "pose": "upright",
+     "look": "mascot",
+     "hands": [
+      "lap",
+      "lap"
+     ]
+    }
+   ],
+   "claude": [
+    {
+     "at": "start",
+     "do": "turn",
+     "to": "nerd",
+     "dur": 0.35
+    },
+    {
+     "at": "start",
+     "do": "eyes",
+     "to": "flat"
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "speaker": "claude",
+   "gap": 0.32,
+   "text": "You said: I've got this.",
+   "tts": "[deadpan, matter-of-fact] You said: [short pause] I've got this.",
+   "shot": "claude_lens_close",
+   "emph": [
+    "got",
+    "this"
+   ],
+   "claude": [
+    {
+     "at": "start-0.15",
+     "do": "turn",
+     "to": "lens",
+     "dur": 0.45,
+     "ease": "smooth"
+    },
+    {
+     "at": "w:got",
+     "do": "bounce",
+     "amt": 1.2
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w:got",
+     "type": "sub"
+    }
+   ]
+  },
+  {
+   "id": "TITLE",
+   "hold": 2.5,
+   "gap": 0.35,
+   "shot": "title",
+   "title": true,
+   "light": [
+    {
+     "at": "start",
+     "preset": "normal"
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "speaker": "nerd",
+   "gap": 0.0,
+   "text": "Okay. Now we're safe.",
+   "tts": "[relieved, a bit smug] Okay. [short pause] Now we're safe.",
+   "shot": "ots_nerd",
+   "emph": [
+    "safe"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.05",
+     "face": "smug",
+     "pose": "lean_back",
+     "look": "screen",
+     "hands": [
+      "type",
+      "type"
+     ],
+     "hdur": 0.05,
+     "pdur": 0.05,
+     "ldur": 0.05,
+     "fdur": 0.05
+    },
+    {
+     "at": "start+0.05",
+     "do": "type",
+     "until": "end-0.15"
+    },
+    {
+     "at": "end-0.1",
+     "do": "tap_r"
+    }
+   ],
+   "claude": [
+    {
+     "at": "start-0.05",
+     "do": "walk",
+     "to": "desk",
+     "dur": 0.05
+    }
+   ],
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "zsh — ~/my-app",
+      "lines": [
+       "✓ Old key revoked",
+       "$ git push"
+      ],
+      "typed": true,
+      "cps": 14,
+      "type_delay": 0.1
+     }
+    ]
+   }
+  },
+  {
+   "id": "L13",
+   "speaker": "claude",
+   "gap": 0.28,
+   "text": "You also pushed node_modules.",
+   "tts": "[deadpan, flat] You also pushed node modules.",
+   "shot": {
+    "name": "claude_cu",
+    "punch": [
+     {
+      "at": "w:node",
+      "amt": 1.12
+     }
+    ]
+   },
+   "emph": [
+    "node_modules"
+   ],
+   "claude": [
+    {
+     "at": "start-0.05",
+     "do": "turn",
+     "to": "cheat",
+     "dur": 0.01
+    },
+    {
+     "at": "w:node",
+     "do": "bounce",
+     "amt": 1.0
+    }
+   ],
+   "sfx": [
+    {
+     "at": "end",
+     "type": "sub"
+    }
+   ]
+  },
+  {
+   "id": "END",
+   "hold": 0.45,
+   "gap": 0.12,
+   "shot": "ecu_center",
+   "light": [
+    {
+     "at": "start",
+     "preset": "alarm",
+     "dur": 0.01
+    }
+   ],
+   "nerd": [
+    {
+     "at": "start",
+     "face": "panic",
+     "pose": "recoil",
+     "hands": [
+      "cheek",
+      "cheek"
+     ],
+     "look": "screen",
+     "fdur": 0.01,
+     "pdur": 0.01,
+     "hdur": 0.01,
+     "ldur": 0.01
+    }
+   ],
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "zsh — ~/my-app",
+      "lines": [
+       "$ git commit -m \"ship it\"",
+       "+ .env",
+       "$ git push",
+       "✓ main -> origin (public)"
+      ],
+      "scale": 1.45,
+      "y0": 30,
+      "big": {
+       "text": ".ENV IS PUBLIC",
+       "color": "red",
+       "at": "start-1.0"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+# Everything the pipeline generates inside an episode folder
+examples/*/assets/
+examples/*/project/
+examples/*/renders/
+examples/*/qa/
+examples/*/publish/
+examples/*/final*.mp4
+examples/*/cover.png
+examples/*/captions.srt
+__pycache__/
+*.pyc
+*.blend1
+.DS_Store

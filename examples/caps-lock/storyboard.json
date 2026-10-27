@@ -1,0 +1,779 @@
+{
+ "meta": {
+  "series": "duo",
+  "format": "duo-sketch-reel",
+  "title": "Your fix isn't showing up? Check the port",
+  "language": "en",
+  "cta_keyword": "PORT",
+  "caption": "told claude to fix the button 13 times. it was fixed the whole time 🫠\n\ncheck the port before you check the code.",
+  "hashtags": [
+   "#vite",
+   "#webdev",
+   "#javascript",
+   "#coding",
+   "#claudecode"
+  ],
+  "hook": {
+   "text": "CLAUDE FIXED MY\nBUTTON 12 TIMES.",
+   "badge": "STILL BROKEN?",
+   "until": "L01.end",
+   "variant_b": {
+    "text": "IT'S NOT\nYOUR CODE.",
+    "badge": "CHECK THE PORT"
+   }
+  },
+  "title_card": {
+   "line1": "CHECK THE PORT",
+   "line2": "NOT THE CODE",
+   "cta_tail": " for the checklist"
+  },
+  "cover": {
+   "beat": "L06",
+   "at": "w:smarter",
+   "line1": "STILL BROKEN?",
+   "line2": "CHECK THE PORT",
+   "badge": "5173 VS 5174"
+  },
+  "sticky": [
+   "CAPS LOCK",
+   "IS NOT",
+   "A STRATEGY"
+  ],
+  "light": "alarm",
+  "claude_spot": "desk",
+  "claude_eyes": "flat",
+  "nerd_start": {
+   "face": "exhausted",
+   "pose": "hunch",
+   "hands": [
+    "type",
+    "type"
+   ],
+   "look": "screen"
+  },
+  "screen_default": {
+   "left": {
+    "type": "code",
+    "file": "localhost:5173",
+    "lines": [
+     "[ Submit ]",
+     "",
+     "# clicked 40 times",
+     "# nothing happens"
+    ]
+   },
+   "right": {
+    "type": "terminal",
+    "title": "vite (since Tuesday)",
+    "lines": [
+     "$ npm run dev",
+     "  VITE ready",
+     "  Local:   http://localhost:5173/"
+    ]
+   }
+  },
+  "music": [
+   {
+    "at": 0,
+    "style": "tense"
+   },
+   {
+    "at": "L08.start",
+    "style": "none",
+    "stop": "tape"
+   },
+   {
+    "at": "L10.start",
+    "style": "drone"
+   },
+   {
+    "at": "L11.start",
+    "style": "groove"
+   },
+   {
+    "at": "TITLE.start",
+    "style": "resolve"
+   },
+   {
+    "at": "L12.start",
+    "style": "lofi"
+   },
+   {
+    "at": "END.start",
+    "style": "tense"
+   }
+  ],
+  "resources": {
+   "title": "Your fix isn't showing up? Check the port",
+   "summary": "If Vite's default port is taken (often by a dev server you forgot to stop), Vite starts on the next free port. Your fix lives there, while the old tab still shows the old app.",
+   "main_link": "https://vite.dev/config/server-options",
+   "links": [
+    {
+     "label": "Vite docs: server.port and server.strictPort",
+     "url": "https://vite.dev/config/server-options"
+    },
+    {
+     "label": "Vite source: the port-in-use message",
+     "url": "https://github.com/vitejs/vite/blob/main/packages/vite/src/node/http.ts"
+    },
+    {
+     "label": "Vite docs: configuring Vite",
+     "url": "https://vite.dev/config/"
+    }
+   ],
+   "steps": [
+    {
+     "title": "Compare the URL with the server log",
+     "text": "Vite's default port is 5173. If that port is already being used, Vite automatically tries the next available one, so the server may not end up on the port you expect. Read the Local: line in the terminal and compare it with the tab you're refreshing."
+    },
+    {
+     "title": "Spot the message",
+     "text": "When it has to move, Vite logs this line before starting:",
+     "code": "Port 5173 is in use, trying another one..."
+    },
+    {
+     "title": "Stop the old dev server",
+     "text": "Something is still holding the old port. Usually it's a dev server you started earlier in another terminal and never stopped. Stop it, and the new one can take the port back next time."
+    },
+    {
+     "title": "Make Vite fail loudly instead",
+     "text": "With strictPort set to true, Vite exits if the port is already in use instead of trying the next one.",
+     "code": "// vite.config.js\nimport { defineConfig } from 'vite'\n\nexport default defineConfig({\n  server: { strictPort: true },\n})"
+    }
+   ],
+   "notes": [
+    "Other dev servers have their own rules: check your framework's docs for what it does when the port is taken."
+   ]
+  }
+ },
+ "beats": [
+  {
+   "id": "B00",
+   "hold": 0.3,
+   "shot": "ecu_center",
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "claude — ~/my-app",
+      "lines": [
+       "> fix the button. attempt 12",
+       "● Editing Button.tsx",
+       "✓ Fixed"
+      ],
+      "scale": 1.45,
+      "y0": 30,
+      "big": {
+       "text": "STILL BROKEN",
+       "color": "red",
+       "at": "start-1.0"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "L01",
+   "speaker": "nerd",
+   "gap": 0.0,
+   "text": "Fix the button. Attempt twelve.",
+   "tts": "[exhausted, flat monotone, typing] Fix the button. [short pause] Attempt twelve.",
+   "shot": {
+    "name": "nerd_mcu",
+    "punch": [
+     {
+      "at": "w:twelve",
+      "amt": 1.14
+     }
+    ],
+    "tgt_off": [
+     0,
+     0,
+     0.24
+    ]
+   },
+   "emph": [
+    "twelve"
+   ],
+   "nerd": [
+    {
+     "at": "start",
+     "face": "exhausted",
+     "pose": "hunch",
+     "look": "screen",
+     "hands": [
+      "type",
+      "type"
+     ]
+    },
+    {
+     "at": "start+0.05",
+     "do": "type",
+     "until": "end-0.1"
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "speaker": "claude",
+   "gap": 0.12,
+   "text": "Fixed.",
+   "tts": "[flat, instant] Fixed.",
+   "shot": "claude_cu",
+   "emph": [
+    "fixed"
+   ],
+   "claude": [
+    {
+     "at": "start-0.2",
+     "do": "turn",
+     "to": "cheat",
+     "dur": 0.3
+    },
+    {
+     "at": "w:fixed",
+     "do": "bounce",
+     "amt": 0.7
+    }
+   ],
+   "overlay": [
+    {
+     "type": "chip",
+     "text": "FIX #12: DONE",
+     "color": "green",
+     "at": "w:fixed",
+     "until": "end+0.1",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w:fixed",
+     "type": "chime"
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "speaker": "nerd",
+   "gap": 0.2,
+   "text": "Still broken.",
+   "tts": "[tired, flat, defeated] Still broken.",
+   "shot": "nerd_cu",
+   "emph": [
+    "broken"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.1",
+     "face": "sad",
+     "pose": "slump",
+     "look": "mascot",
+     "hands": [
+      "lap",
+      "lap"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "speaker": "claude",
+   "gap": 0.14,
+   "text": "Fixed. Again.",
+   "tts": "[dry, unbothered] Fixed. [short pause] Again.",
+   "shot": "claude_cu",
+   "emph": [
+    "again"
+   ],
+   "claude": [
+    {
+     "at": "w:again",
+     "do": "bounce",
+     "amt": 0.8
+    }
+   ],
+   "overlay": [
+    {
+     "type": "chip",
+     "text": "FIX #13: DONE",
+     "color": "green",
+     "at": "w:fixed",
+     "until": "end+0.1",
+     "y": 300
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w:fixed",
+     "type": "chime"
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "speaker": "nerd",
+   "gap": 0.14,
+   "text": "FIX THE BUTTON!",
+   "tts": "[shouting, losing it completely] FIX THE BUTTON!",
+   "shot": {
+    "name": "nerd_cu",
+    "punch": [
+     {
+      "at": "w:button",
+      "amt": 1.18
+     }
+    ]
+   },
+   "emph": [
+    "FIX",
+    "THE",
+    "BUTTON!"
+   ],
+   "light": [
+    {
+     "at": "start",
+     "preset": "alarm",
+     "dur": 0.05
+    }
+   ],
+   "nerd": [
+    {
+     "at": "start-0.1",
+     "face": "angry",
+     "pose": "lean_in",
+     "look": "screen",
+     "hands": [
+      "type",
+      "type"
+     ],
+     "fdur": 0.05,
+     "pdur": 0.08
+    },
+    {
+     "at": "start",
+     "do": "type",
+     "until": "end"
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w:button",
+     "type": "slam"
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "speaker": "claude",
+   "gap": 0.3,
+   "text": "Caps don't make me smarter.",
+   "tts": "[unbothered, dry, a little bored] Caps don't make me smarter.",
+   "shot": "claude_cu",
+   "emph": [
+    "smarter"
+   ],
+   "claude": [
+    {
+     "at": "start",
+     "do": "eyes",
+     "to": "flat"
+    },
+    {
+     "at": "w:smarter",
+     "do": "bounce",
+     "amt": 0.9
+    }
+   ],
+   "nerd": [
+    {
+     "at": "start",
+     "face": "angry",
+     "pose": "upright",
+     "look": "mascot",
+     "hands": [
+      "lap",
+      "lap"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "speaker": "nerd",
+   "gap": 0.16,
+   "text": "Then why is it STILL BROKEN?!",
+   "tts": "[desperate, voice cracking] Then why is it STILL BROKEN?!",
+   "shot": {
+    "name": "nerd_mcu",
+    "punch": [
+     {
+      "at": "w:broken",
+      "amt": 1.15
+     }
+    ]
+   },
+   "emph": [
+    "STILL",
+    "BROKEN?!"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.1",
+     "face": "panic",
+     "pose": "recoil",
+     "hands": [
+      "cheek",
+      "cheek"
+     ],
+     "look": "mascot"
+    }
+   ],
+   "claude": [
+    {
+     "at": "end-0.5",
+     "do": "walk",
+     "to": "edge",
+     "dur": 0.55,
+     "face": "lens"
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "speaker": "claude",
+   "gap": 0.32,
+   "text": "You're on 5173. Your fix is on 5174.",
+   "tts": "[calm, slow, patient] You're on fifty-one seventy-three. [short pause] Your fix is on fifty-one seventy-four.",
+   "shot": {
+    "name": "monitor_ecu",
+    "static": false
+   },
+   "sub_y": 1480,
+   "emph": [
+    "5173.",
+    "5174."
+   ],
+   "light": [
+    {
+     "at": "start",
+     "preset": "normal"
+    }
+   ],
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "vite (new)",
+      "lines": [
+       "$ npm run dev",
+       "! Port 5173 is in use,",
+       "! trying another one...",
+       "  VITE ready",
+       "✓ Local: localhost:5174"
+      ],
+      "reveal": [
+       "start",
+       "start+0.15",
+       "start+0.15",
+       "w:your-0.3",
+       "w:your-0.25"
+      ],
+      "scale": 1.4
+     }
+    ]
+   },
+   "sfx": [
+    {
+     "at": "w:your-0.25",
+     "type": "tick"
+    }
+   ],
+   "sources": [
+    "https://vite.dev/config/server-options",
+    "https://github.com/vitejs/vite/blob/main/packages/vite/src/node/http.ts"
+   ]
+  },
+  {
+   "id": "L09",
+   "speaker": "nerd",
+   "gap": 0.35,
+   "text": "…Since when?",
+   "tts": "[quiet, stunned] …Since when?",
+   "shot": "nerd_mcu",
+   "emph": [
+    "when?"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.2",
+     "face": "surprised",
+     "pose": "upright",
+     "look": "screen",
+     "hands": [
+      "lap",
+      "lap"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "speaker": "claude",
+   "gap": 0.3,
+   "text": "Since Tuesday. You never stopped the old one.",
+   "tts": "[deadpan] Since Tuesday. [short pause] You never stopped the old one.",
+   "shot": "claude_lens_close",
+   "emph": [
+    "tuesday",
+    "never"
+   ],
+   "claude": [
+    {
+     "at": "w:tuesday",
+     "do": "bounce",
+     "amt": 1.1
+    },
+    {
+     "at": "w:never",
+     "do": "shake",
+     "dur": 0.5
+    }
+   ],
+   "sfx": [
+    {
+     "at": "w:tuesday",
+     "type": "sub"
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "speaker": "claude",
+   "gap": 0.22,
+   "text": "Port taken? Vite jumps to the next one. Check the URL first.",
+   "tts": "[upbeat, teaching] Port taken? Vite jumps to the next one. [short pause] Check the URL first.",
+   "shot": "claude_lens",
+   "emph": [
+    "next",
+    "URL"
+   ],
+   "light": [
+    {
+     "at": "start",
+     "preset": "spot"
+    }
+   ],
+   "claude": [
+    {
+     "at": "w:port",
+     "do": "bounce",
+     "amt": 0.7
+    },
+    {
+     "at": "w:next",
+     "do": "bounce",
+     "amt": 0.9
+    },
+    {
+     "at": "w:check",
+     "do": "bounce",
+     "amt": 1.0
+    }
+   ],
+   "overlay": [
+    {
+     "type": "panel",
+     "title": "FIX NOT SHOWING UP?",
+     "at": "start",
+     "until": "end+0.15",
+     "y": 250,
+     "items": [
+      {
+       "text": "1. Check the port in the URL",
+       "sub": "Vite moves to the next free port",
+       "at": "w:port-0.2"
+      },
+      {
+       "text": "2. Stop the old dev server",
+       "sub": "it's still holding the port",
+       "at": "w:next-0.2"
+      },
+      {
+       "text": "3. strictPort: true",
+       "sub": "Vite exits instead of switching",
+       "at": "w:check-0.2"
+      }
+     ]
+    }
+   ],
+   "sources": [
+    "https://vite.dev/config/server-options"
+   ]
+  },
+  {
+   "id": "TITLE",
+   "hold": 2.3,
+   "gap": 0.3,
+   "shot": "title",
+   "title": true,
+   "light": [
+    {
+     "at": "start",
+     "preset": "normal"
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "speaker": "nerd",
+   "gap": 0.0,
+   "text": "FIX THE TAB!",
+   "tts": "[shouting, triumphant] FIX THE TAB!",
+   "shot": "ots_nerd",
+   "emph": [
+    "TAB!"
+   ],
+   "nerd": [
+    {
+     "at": "start-0.05",
+     "face": "ecstatic",
+     "pose": "lean_in",
+     "look": "screen",
+     "hands": [
+      "type",
+      "type"
+     ],
+     "hdur": 0.05,
+     "pdur": 0.05,
+     "ldur": 0.05,
+     "fdur": 0.05
+    },
+    {
+     "at": "start+0.05",
+     "do": "type",
+     "until": "end-0.1"
+    },
+    {
+     "at": "end-0.05",
+     "do": "tap_r"
+    }
+   ],
+   "claude": [
+    {
+     "at": "start-0.05",
+     "do": "walk",
+     "to": "desk",
+     "dur": 0.05
+    }
+   ],
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "claude — ~/my-app",
+      "lines": [
+       "✓ Local:   http://localhost:5174/",
+       "> FIX THE TAB"
+      ],
+      "typed": true,
+      "cps": 16,
+      "type_delay": 0.05
+     }
+    ]
+   }
+  },
+  {
+   "id": "L13",
+   "speaker": "claude",
+   "gap": 0.25,
+   "text": "Fixed. Now fix your caps lock.",
+   "tts": "[deadpan, flat] Fixed. [short pause] Now fix your caps lock.",
+   "shot": {
+    "name": "claude_cu",
+    "punch": [
+     {
+      "at": "w:caps",
+      "amt": 1.12
+     }
+    ]
+   },
+   "emph": [
+    "caps",
+    "lock."
+   ],
+   "claude": [
+    {
+     "at": "start-0.05",
+     "do": "turn",
+     "to": "cheat",
+     "dur": 0.01
+    },
+    {
+     "at": "w:caps",
+     "do": "bounce",
+     "amt": 1.0
+    }
+   ],
+   "sfx": [
+    {
+     "at": "end",
+     "type": "sub"
+    }
+   ]
+  },
+  {
+   "id": "END",
+   "hold": 0.45,
+   "gap": 0.12,
+   "shot": "ecu_center",
+   "light": [
+    {
+     "at": "start",
+     "preset": "alarm",
+     "dur": 0.01
+    }
+   ],
+   "nerd": [
+    {
+     "at": "start",
+     "face": "exhausted",
+     "pose": "hunch",
+     "hands": [
+      "type",
+      "type"
+     ],
+     "look": "screen",
+     "fdur": 0.01,
+     "pdur": 0.01,
+     "hdur": 0.01,
+     "ldur": 0.01
+    }
+   ],
+   "screens": {
+    "center": [
+     {
+      "at": "start",
+      "type": "terminal",
+      "title": "claude — ~/my-app",
+      "lines": [
+       "> fix the button. attempt 12",
+       "● Editing Button.tsx",
+       "✓ Fixed"
+      ],
+      "scale": 1.45,
+      "y0": 30,
+      "big": {
+       "text": "STILL BROKEN",
+       "color": "red",
+       "at": "start-1.0"
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
