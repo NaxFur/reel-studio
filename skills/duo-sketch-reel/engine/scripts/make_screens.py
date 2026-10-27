@@ -298,7 +298,7 @@ def prepare(states, A):
             st["_reveal"] = [A(r, b) - t0 for r in st["reveal"]]
         if st.get("sel"):
             st["_sel"] = [(A(s["at"], b) - t0, s["i"]) for s in st["sel"]]
-        if st.get("sub"):
+        if isinstance(st.get("sub"), dict):  # a menu's sub-menu; a card's "sub" is plain text
             st["_sub_t"] = A(st["sub"]["at"], b) - t0
             st["_sub_sel"] = [(A(s["at"], b) - t0, s["i"]) for s in st["sub"].get("sel", [])]
         if st.get("done"):
