@@ -15,3 +15,9 @@
 - Overlay/screen frames are hard-linked when identical: everything that changes over time must be in
   the cache key (each template returns its key parts).
 - The free `say` draft timeline is shorter than the real takes (≈ 20 %): re-check stills after the takes.
+- A camera `shake` on a close-up pushed the camera through the set: the whole beat rendered black. Use
+  `punch` for emphasis on close-ups.
+- A take can contain a word twice ("Fixed. Fixed."): if two whisper models agree, trim the take at the
+  silence between the words with ffmpeg instead of paying for a new generation.
+- Spell numbers the way they should be said in `tts` ("fifty-one seventy-three") and keep digits in
+  `text` for the subtitles: whisper writes digits, so the words still align.
