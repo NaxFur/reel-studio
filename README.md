@@ -56,6 +56,7 @@ Everything it follows is in [`AGENTS.md`](AGENTS.md).
 | [`playbook/`](playbook/) | What we learned growing the account: hooks, structure, retention numbers from our own reels, captions, and the comment-to-DM funnel. |
 | [`AGENTS.md`](AGENTS.md) | Step-by-step instructions for your coding agent: install, prove it works, make the first episode. |
 | [`setup/`](setup/) | `install.sh` checks the tools, makes the Python environment and installs the skill. |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Show us your reels, report bugs, add presets. |
 
 ## How a reel gets made
 
